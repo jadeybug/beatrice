@@ -72,8 +72,9 @@ export function ExtractFromNestedObject(obj, nestedProperties) {
 }
 
 export function articleVowelAgreementGrammarizer(followingWord, exceptions=[], articlePrecedingVowel="an", articlePrecedingConsonant="a") {
-  const vowels = ["a", "e", "i", "o", "u", "and-sometimes-y"]; //that last one is just for giggles, it *should* never match.
-  const isFirstLetterVowel = vowels.includes(followingWord.toLowerCase().charAt(0));
-  const useVowelArticle = (isFirstLetterVowel && !exceptions.includes(followingWord)) || (!isFirstLetterVowel && exceptions.includes(followingWord))
+	const vowels = ["a", "e", "i", "o", "u", "and-sometimes-y"]; //that last one is just for giggles, it *should* never match.
+	const isFirstLetterVowel = vowels.includes(followingWord.toLowerCase().charAt(0));
+	const useVowelArticle = (isFirstLetterVowel && !exceptions.includes(followingWord)) || (!isFirstLetterVowel && exceptions.includes(followingWord))
+	
 	return useVowelArticle ? articlePrecedingVowel : articlePrecedingConsonant;
 }
